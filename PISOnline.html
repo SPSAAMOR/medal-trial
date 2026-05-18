@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardioMed Study — LJMU Research</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ljmu-blue: #00205B;
+      --ljmu-mid: #001845;
+      --ljmu-accent: #2CD5C4;
+      --ljmu-caution:#E8B84B;
+      --ljmu-light: #F4F7FA;
+      --ljmu-grey: #6B7280;
+      --ljmu-border: #DBE2E9;
+      --text-dark: #1C1C1C;
+      --text-body: #3D3D3D;
+      --ljmu-green: #2CD5C4;
+      --ljmu-steel: #DBE2E9;
+      --ljmu-red: #7C0A02;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--ljmu-light);
+      color: var(--text-body);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--ljmu-blue);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+    }
+
+    .logo-text {
+      color: #fff;
+    }
+
+    .logo-text .uni-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ccc;
+      line-height: 1.1;
+    }
+
+    .logo-text .faculty {
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 6px 12px;
+      border-radius: 3px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--ljmu-blue) 0%, var(--ljmu-mid) 60%, #0F3460 100%);
+      color: #fff;
+      padding: 90px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 2px solid rgba(200,16,46,0.25);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,75,0.15);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--ljmu-accent);
+      color: #000;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 700px;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span {
+      color: var(--ljmu-accent);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 620px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--ljmu-blue);
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: #a80d26;
+      transform: translateY(-1px);
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 20px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+    }
+
+    .hero-badge .icon {
+      font-size: 22px;
+    }
+
+    /* ── SECTION SHELLS ── */
+    section {
+      padding: 72px 32px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ljmu-blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-lead {
+      font-size: 17px;
+      color: var(--ljmu-grey);
+      max-width: 680px;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    /* ── VOLUNTARY BANNER ── */
+    .voluntary-banner {
+      background: #FFF3CD;
+      border-left: 6px solid var(--ljmu-caution);
+      padding: 24px 32px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .voluntary-banner .icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .voluntary-banner strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+      color: #7A5A00;
+      margin-bottom: 6px;
+    }
+
+    .voluntary-banner p {
+      color: #7A5A00;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-section {
+      background: #fff;
+      border-top: 1px solid var(--ljmu-border);
+      border-bottom: 1px solid var(--ljmu-border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    .about-stat {
+      text-align: center;
+      padding: 28px;
+      border: 1px solid var(--ljmu-border);
+      border-radius: 6px;
+    }
+
+    .about-stat .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--ljmu-blue);
+      line-height: 1;
+    }
+
+    .about-stat .label {
+      font-size: 14px;
+      color: var(--ljmu-grey);
+      margin-top: 6px;
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ── ELIGIBILITY ── */
+    .eligibility-section {
+      background: var(--ljmu-light);
+    }
+
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .eligibility-grid { grid-template-columns: 1fr; }
+    }
+
+    .elig-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid var(--ljmu-blue);
+    }
+
+    .elig-card.include {
+      border-top: 4px solid #2E7D32;
+    }
+
+    .elig-card.exclude {
+      border-top: 4px solid var(--ljmu-red);
+    }
+
+    .elig-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .elig-card.include h3 { color: #2E7D32; }
+    .elig-card.exclude h3 { color: var(--ljmu-red); }
+
+    .elig-card .sub {
+      font-size: 13px;
+      color: var(--ljmu-grey);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .elig-list {
+      list-style: none;
+    }
+
+    .elig-list li {
+      display: block;
+      padding: 10px 0 10px 30px;
+      border-bottom: 1px solid var(--ljmu-border);
+      font-size: 15px;
+      color: var(--text-body);
+      position: relative;
+    }
+
+    .elig-list li:last-child { border-bottom: none; }
+
+    .elig-list li::before {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .elig-card.include .elig-list li::before {
+      content: '✓';
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .elig-card.exclude .elig-list li::before {
+      content: '✕';
+      background: #FFEBEE;
+      color: var(--ljmu-red);
+    }
+
+    /* ── GROUPS ── */
+    .groups-section {
+      background: var(--ljmu-blue);
+      color: #fff;
+    }
+
+    .groups-section .section-title { color: #fff; }
+    .groups-section .section-lead { color: rgba(255,255,255,0.6); }
+
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .group-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .group-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+
+    .group-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ljmu-accent);
+      margin-bottom: 12px;
+    }
+
+    .group-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .group-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .group-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* ── ASSESSMENTS ── */
+    .assessments-section {
+      background: #fff;
+      border-top: 1px solid var(--ljmu-border);
+    }
+
+    .assessments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .assessment-card {
+      background: var(--ljmu-light);
+      border: 1px solid var(--ljmu-border);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .assessment-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .assessment-card h4 {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .assessment-card p {
+      font-size: 13px;
+      color: var(--ljmu-grey);
+      line-height: 1.5;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits-section {
+      background: var(--ljmu-blue);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefits-section::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(44,213,196,0.15);
+      pointer-events: none;
+    }
+
+    .benefits-section .section-label { color: var(--ljmu-accent); }
+    .benefits-section .section-title { color: #fff; }
+    .benefits-section .section-lead  { color: rgba(255,255,255,0.65); }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 10px;
+      padding: 28px 26px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .benefit-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+    }
+
+    .benefit-icon {
+      font-size: 30px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .benefit-card h4 {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .benefits-value-banner {
+      margin-top: 36px;
+      background: var(--ljmu-accent);
+      border-radius: 10px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefits-value-banner .val-icon {
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+
+    .benefits-value-banner h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ljmu-blue);
+      margin-bottom: 4px;
+    }
+
+    .benefits-value-banner p {
+      font-size: 15px;
+      color: var(--ljmu-blue);
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+      .benefits-value-banner { flex-direction: column; text-align: center; }
+    }
+
+    /* ── APP ── */
+    .app-section {
+      background: linear-gradient(135deg, #F8F3EC 0%, #EFF6FF 100%);
+      border-top: 1px solid var(--ljmu-border);
+      border-bottom: 1px solid var(--ljmu-border);
+    }
+
+    .app-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .app-inner { grid-template-columns: 1fr; }
+    }
+
+    .app-phone {
+      background: var(--ljmu-blue);
+      border-radius: 32px;
+      padding: 32px 24px;
+      text-align: center;
+      color: #fff;
+      border: 8px solid #333;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .app-phone .app-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ljmu-accent);
+      margin-bottom: 6px;
+    }
+
+    .app-phone .app-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
+    }
+
+    .app-feature {
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .app-features-list {
+      list-style: none;
+      margin-top: 28px;
+    }
+
+    .app-features-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--ljmu-border);
+    }
+
+    .app-features-list li:last-child { border-bottom: none; }
+
+    .app-features-list li .fi {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .app-features-list li p {
+      font-size: 15px;
+      color: var(--text-body);
+    }
+
+    .app-features-list li strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    /* ── DATA ── */
+    .data-section {
+      background: #fff;
+    }
+
+    .data-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .data-cards { grid-template-columns: 1fr; }
+    }
+
+    .data-card {
+      border: 1px solid var(--ljmu-border);
+      border-radius: 8px;
+      padding: 28px 24px;
+    }
+
+    .data-card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .data-card h4 {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .data-card p {
+      font-size: 14px;
+      color: var(--ljmu-grey);
+      line-height: 1.6;
+    }
+
+    .data-note {
+      margin-top: 32px;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 6px;
+      padding: 20px 24px;
+      font-size: 14px;
+      color: #1E40AF;
+    }
+
+    /* ── CONTACT / APPLY ── */
+    .apply-section {
+      background: var(--ljmu-blue);
+      color: #fff;
+    }
+
+    .apply-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .apply-inner { grid-template-columns: 1fr; }
+    }
+
+    .apply-section .section-label { color: rgba(255,255,255,0.7); }
+    .apply-section .section-title { color: #fff; }
+    .apply-section .section-lead { color: rgba(255,255,255,0.75); }
+
+    .apply-form-card {
+      background: var(--ljmu-accent);
+      border-radius: 8px;
+      padding: 36px;
+    }
+
+    .apply-form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .apply-form-card p {
+      font-size: 14px;
+      color: var(--ljmu-grey);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--ljmu-border);
+      border-radius: 4px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--ljmu-light);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--ljmu-blue);
+      background: #fff;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--ljmu-blue);
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 4px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: #a80d26; }
+
+    .apply-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .apply-check {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .apply-check .icon {
+      background: rgba(255,255,255,0.2);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .apply-check strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .apply-check p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin: 0;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: var(--ljmu-blue);
+      color: var(--ljmu-silver);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-btn:hover {
+      background: #a80d26;
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      padding: 40px 32px;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+    .footer-right {
+      text-align: right;
+    }
+
+    /* ── DIVIDER ── */
+    .red-rule {
+      width: 60px;
+      height: 4px;
+      background: var(--ljmu-blue);
+      border-radius: 2px;
+      margin: 14px 0 24px;
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 56px 20px; }
+      .header-inner { padding: 12px 20px; }
+      nav { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <img src="LJMU_logo.png" alt="LJMU Logo" class="logo-badge">
+      <div class="logo-text">
+        <div class="uni-name">Liverpool John Moores University</div>
+        <div class="faculty">School of Sport &amp; Exercise Sciences</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#groups">Groups</a>
+      <a href="#assessments">Assessments</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#apply">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">PhD Research Study — Recruitment Open</div>
+    <h1>Protecting Your Heart <span>for the Future</span></h1>
+    <p class="hero-sub">A clinical research study exploring how diet and exercise can reduce cardiovascular disease risk. We are looking for healthy adult volunteers aged 30–55 to take part.</p>
+    <a href="#apply" class="hero-cta">Express Interest →</a>
+    <div class="hero-badges">
+      <div class="hero-badge"><span class="icon">🔬</span> PhD Research Programme</div>
+      <div class="hero-badge"><span class="icon">🏫</span> LJMU — Liverpool</div>
+      <div class="hero-badge"><span class="icon">❤️</span> Cardiovascular Health</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid fade-in">
+      <div>
+        <div class="section-label">About the Study</div>
+        <div class="red-rule"></div>
+        <h2 class="section-title">What is this research about?</h2>
+        <p>This study aims to develop an effective, easy-to-follow programme to help adults <strong>futureproof themselves against cardiovascular disease</strong> by reducing cholesterol levels and improving their cardiovascular health.</p>
+        <br>
+        <p>We will do this by using a dedicated smartphone application to support participants in adhering to a <strong>Mediterranean diet</strong> and/or a <strong>resistance exercise regimen</strong>. The study forms part of a PhD degree programme at Liverpool John Moores University.</p>
+        <br>
+        <div class="voluntary-banner">
+          <div class="icon">⚠️</div>
+          <div>
+            <strong>Participation is entirely voluntary</strong>
+            <p>You are under no obligation to take part in this study. If you choose to participate, you are free to <strong>withdraw at any time and for any reason</strong> without penalty or consequences of any kind. Your decision will be fully respected.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats-grid">
+        <div class="about-stat">
+          <div class="number">4</div>
+          <div class="label">Study Groups</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">30–55</div>
+          <div class="label">Age Range (years)</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">6</div>
+          <div class="label">Assessment Types</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">📱</div>
+          <div class="label">Dedicated Study App</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="eligibility-section" id="eligibility">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">Who can take part?</div>
+      <div class="red-rule"></div>
+      <h2 class="section-title">Eligibility Criteria</h2>
+      <p class="section-lead">Please read the criteria below carefully before expressing interest. You must meet <em><strong>all</strong></em> inclusion criteria and <em><strong>none</strong></em> of the exclusion criteria.</p>
+    </div>
+    <div class="eligibility-grid fade-in">
+      <div class="elig-card include">
+        <h3>✔ You should apply if…</h3>
+        <p class="sub">You meet all of the following conditions</p>
+        <ul class="elig-list">
+          <li>You are aged between <strong>30 and 55 years</strong></li>
+          <li>You own and regularly use a <strong>smartphone</strong></li>
+        </ul>
+      </div>
+      <div class="elig-card exclude">
+        <h3>✖ You must NOT apply if…</h3>
+        <p class="sub">You are ineligible if any of the following apply</p>
+        <ul class="elig-list">
+          <li>You currently use any <strong>cardiometabolic medication</strong>, particularly lipid-lowering drugs or supplements that may affect LDL cholesterol levels</li>
+          <li>You are a woman who is <strong>pregnant or nursing</strong></li>
+          <li>You have a <strong>chronic health condition</strong> (e.g. cancer, cardiovascular disease, diabetes, etc.)</li>
+          <li>You have a <strong>history of cardiovascular disease</strong> or a major adverse cardiovascular event (e.g. stroke or heart attack)</li>
+          <li>You have a <strong>known food allergy or intolerance</strong></li>
+          <li>You are currently following a <strong>restrictive eating pattern</strong> (e.g. vegan, vegetarian, carnivore, or ketogenic diet)</li>
+          <li>You have participated in <strong>regular resistance exercise</strong> within the last 12 months</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUPS -->
+<section class="groups-section" id="groups">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">Study Design</div>
+      <div class="red-rule" style="background: var(--ljmu-accent);"></div>
+      <h2 class="section-title">The Four Study Groups</h2>
+      <p class="section-lead">If you take part, you will be randomly allocated to one of these four groups.</p>
+    </div>
+    <div class="groups-grid fade-in">
+      <div class="group-card">
+        <div class="group-number">Group 1</div>
+        <span class="group-icon">🏋️</span>
+        <h3>Resistance Exercise</h3>
+        <p>You will follow a structured <strong>3-day-per-week resistance exercise programme</strong> designed by the research team.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-number">Group 2</div>
+        <span class="group-icon">🥗</span>
+        <h3>Mediterranean Diet</h3>
+        <p>You will follow a <strong>Mediterranean-style diet</strong> with guidance and support provided through the study application.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-number">Group 3</div>
+        <span class="group-icon">🏋️🥗</span>
+        <h3>Combination</h3>
+        <p>You will follow <strong>both</strong> the Mediterranean-style diet <strong>and</strong> the 3-day-per-week resistance exercise programme.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-number">Group 4</div>
+        <span class="group-icon">📋</span>
+        <h3>Control Group</h3>
+        <p>You will receive general advice on <strong>healthy eating and exercise patterns</strong> without a structured programme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSMENTS -->
+<section class="assessments-section" id="assessments">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">What's involved?</div>
+      <div class="red-rule"></div>
+      <h2 class="section-title">Assessments & Measurements</h2>
+      <p class="section-lead">All participants will undergo the following assessments at the beginning and end of the study period. These will be carried out at LJMU facilities by trained researchers.</p>
+    </div>
+    <div class="assessments-grid fade-in">
+      <div class="assessment-card">
+        <div class="assessment-icon">🩺</div>
+        <div>
+          <h4>Blood Pressure Test</h4>
+          <p>Standard resting blood pressure measurement using a validated device.</p>
+        </div>
+      </div>
+      <div class="assessment-card">
+        <div class="assessment-icon">📏</div>
+        <div>
+          <h4>Anthropometric Measurements</h4>
+          <p>Weight, height, waist circumference, BMI, and body composition assessment.</p>
+        </div>
+      </div>
+      <div class="assessment-card">
+        <div class="assessment-icon">✊</div>
+        <div>
+          <h4>Grip Strength Test</h4>
+          <p>A handgrip dynamometer will be used to assess muscular strength.</p>
+        </div>
+      </div>
+      <div class="assessment-card">
+        <div class="assessment-icon">🧬</div>
+        <div>
+          <h4>Advanced Blood Tests</h4>
+          <p>Comprehensive blood panel including cholesterol (LDL, HDL, total) and related markers.</p>
+        </div>
+      </div>
+      <div class="assessment-card">
+        <div class="assessment-icon">❤️</div>
+        <div>
+          <h4>Cardiovascular Tests</h4>
+          <p>Flow mediated dilation (FMD) and pulse wave velocity (PWV) to assess vascular health.</p>
+        </div>
+      </div>
+      <div class="assessment-card">
+        <div class="assessment-icon">📝</div>
+        <div>
+          <h4>Mediterranean Diet Score</h4>
+          <p>A validated questionnaire to assess adherence to the Mediterranean dietary pattern.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="benefits">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">Why take part?</div>
+      <div class="red-rule" style="background: var(--ljmu-accent);"></div>
+      <h2 class="section-title">What's in it for you?</h2>
+      <p class="section-lead">Participation gives you access to a comprehensive suite of health assessments that would be difficult and costly to access elsewhere — all at no cost to you.</p>
+    </div>
+    <div class="benefits-grid fade-in">
+      <div class="benefit-card">
+        <div class="benefit-icon">🏃</div>
+        <div>
+          <h4>State-of-the-Art Body Composition Test</h4>
+          <p>Gain a detailed picture of your body composition using equipment typically only available in clinical or elite sport settings.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🩸</div>
+        <div>
+          <h4>Cholesterol & Blood Sugar Check</h4>
+          <p>Receive a comprehensive blood analysis including cholesterol levels and blood glucose — key markers of your long-term health.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">❤️</div>
+        <div>
+          <h4>Unique Cardiovascular Tests</h4>
+          <p>Access specialist vascular assessments — Flow Mediated Dilation (FMD) and Pulse Wave Velocity (PWV) — rarely available outside of research or private clinical settings.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔬</div>
+        <div>
+          <h4>Be Part of World-Leading Research</h4>
+          <p>Contribute to pioneering research at Liverpool John Moores University aimed at protecting future generations against cardiovascular disease.</p>
+        </div>
+      </div>
+    </div>
+    <div class="benefits-value-banner fade-in">
+      <div class="val-icon">💷</div>
+      <div>
+        <h4>A test battery worth upward of £1,700 — completely free</h4>
+        <p>If undertaken privately, the full range of assessments you will receive as part of this study could cost in excess of <strong>£1,700</strong>. As a participant, you receive all of this at no cost whatsoever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP -->
+<section class="app-section">
+  <div class="section-inner">
+    <div class="app-inner fade-in">
+      <div>
+        <div class="section-label">Study Technology</div>
+        <div class="red-rule"></div>
+        <h2 class="section-title">A Dedicated Study Application</h2>
+        <p class="section-lead">Participants will receive access to a bespoke, limited-access smartphone application developed specifically for this study.</p>
+        <ul class="app-features-list">
+          <li>
+            <span class="fi">🔐</span>
+            <div>
+              <strong>Limited Access</strong>
+              <p>The app is exclusive to enrolled participants and not publicly available.</p>
+            </div>
+          </li>
+          <li>
+            <span class="fi">🥗</span>
+            <div>
+              <strong>Diet Guidance</strong>
+              <p>Mediterranean diet resources, meal ideas, and tracking tools.</p>
+            </div>
+          </li>
+          <li>
+            <span class="fi">🏋️</span>
+            <div>
+              <strong>Exercise Tracking</strong>
+              <p>Structured resistance exercise plans.</p>
+            </div>
+          </li>
+          <li>
+            <span class="fi">📊</span>
+            <div>
+              <strong>Progress Monitoring</strong>
+              <p>Track your adherence throughout the study.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="app-phone">
+          <div class="app-logo">MedTrack</div>
+          <div class="app-sub">LJMU Study Application</div>
+          <div class="app-feature">🥗 Today's Mediterranean Meal Guide</div>
+          <div class="app-feature">🏋️ Week 3 — Session A</div>
+          <div class="app-feature">📊 Your Adherence: 89%</div>
+          <div class="app-feature">🔔 Next check-in: Tomorrow</div>
+          <div style="margin-top: 24px; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; text-transform: uppercase;">Study participants only</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA -->
+<section class="data-section">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">Privacy & Data</div>
+      <div class="red-rule"></div>
+      <h2 class="section-title">Your Personal Data</h2>
+      <p class="section-lead">We are committed to handling your data responsibly and in full compliance with UK GDPR and LJMU's data protection policies.</p>
+    </div>
+    <div class="data-cards fade-in">
+      <div class="data-card">
+        <div class="data-card-icon">📬</div>
+        <h4>Contact Details</h4>
+        <p>Your name, email address, and phone number will be collected to communicate with you throughout the study period.</p>
+      </div>
+      <div class="data-card">
+        <div class="data-card-icon">📄</div>
+        <h4>Record of Consent</h4>
+        <p>A formal record of your informed consent to participate will be stored securely for the duration and required retention period of the study.</p>
+      </div>
+      <div class="data-card">
+        <div class="data-card-icon">📊</div>
+        <h4>Project Data</h4>
+        <p>All health measurements, assessment results, and study-related data collected during your participation will be stored and processed securely.</p>
+      </div>
+    </div>
+    <div class="data-note fade-in">
+      🔒 <strong>Your data will be stored securely</strong> and accessed only by the research team. Data will be anonymised for any publications arising from this work. You have the right to access, correct, or request deletion of your personal data at any time.
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply-section" id="apply">
+  <div class="section-inner">
+    <div class="apply-inner">
+      <div class="fade-in">
+        <div class="section-label">Get Involved</div>
+        <div class="red-rule" style="background: rgba(255,255,255,0.4);"></div>
+        <h2 class="section-title">Interested in Taking Part?</h2>
+        <p class="section-lead">If you meet the eligibility criteria and would like to find out more, scan the QR code or get in touch directly with the research team.</p>
+        <div class="apply-checks">
+          <div class="apply-check">
+            <div class="icon">✋</div>
+            <div>
+              <strong>Completely Voluntary</strong>
+              <p>You are free to withdraw at any time without repercussions.</p>
+            </div>
+          </div>
+          <div class="apply-check">
+            <div class="icon">🔐</div>
+            <div>
+              <strong>Your data is protected</strong>
+              <p>All personal information is handled in line with UK GDPR.</p>
+            </div>
+          </div>
+          <div class="apply-check">
+            <div class="icon">📞</div>
+            <div>
+              <strong>Questions?</strong>
+              <p>Reach out to the research team at <strong>spsaamor@ljmu.ac.uk</strong> before applying.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="apply-form-card fade-in">
+        <h3>To express interest, scan this QR code or contact us</h3>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:24px; margin-top:24px;">
+          <img src="QR_Code.png" alt="QR Code to express interest" style="width:220px; height:220px; border:6px solid #f0f0ea; border-radius:8px;" />
+          <a href="https://app.onlinesurveys.jisc.ac.uk/s/ljmu/medal-trial" class="contact-btn">Register Interest</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="LJMU_logo.png" alt="LJMU Logo" class="footer-badge">
+      <div>
+        <div style="color: rgba(255,255,255,0.7); font-weight: 600;">Liverpool John Moores University</div>
+        <div>School of Sport &amp; Exercise Sciences — PhD Research</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div>Enquiries: research@ljmu.ac.uk</div>
+      <div style="margin-top: 4px;">© 2025 LJMU. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Form submission feedback
+  document.querySelector('.form-submit').addEventListener('click', function() {
+    this.textContent = '✓ Submitted — We\'ll be in touch!';
+    this.style.background = '#2E7D32';
+    this.disabled = true;
+  });
+</script>
+</body>
+</html>
