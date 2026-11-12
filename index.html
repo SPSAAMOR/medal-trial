@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CardioMed Study — LJMU Research</title>
+  <title>MEDAL Study — LJMU Research</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -899,7 +899,7 @@
     .contact-btn {
       display: inline-block;
       background: var(--ljmu-blue);
-      color: var(--ljmu-silver);
+      color: #fff;
       font-weight: 600;
       font-size: 16px;
       padding: 14px 36px;
@@ -913,6 +913,26 @@
       background: #a80d26;
       transform: translateY(-1px);
     }
+
+    /* ── STEPS ── */
+    .steps-section { background: var(--ljmu-light); border-top: 1px solid var(--ljmu-border); }
+    .steps-list { list-style: none; counter-reset: step; display: grid; gap: 16px; max-width: 820px; }
+    .steps-list li {
+      counter-increment: step; position: relative; background: #fff;
+      border: 1px solid var(--ljmu-border); border-radius: 8px; padding: 20px 24px 20px 72px;
+    }
+    .steps-list li::before {
+      content: counter(step); position: absolute; left: 22px; top: 20px;
+      width: 32px; height: 32px; border-radius: 50%; background: var(--ljmu-blue); color: #fff;
+      font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center;
+    }
+    .steps-list strong { color: var(--text-dark); display: block; margin-bottom: 2px; }
+    .steps-list p { font-size: 15px; color: var(--ljmu-grey); line-height: 1.6; }
+    .pis-btn {
+      display: inline-block; margin-top: 8px; color: var(--ljmu-blue); font-weight: 600;
+      text-decoration: underline;
+    }
+    .apply-section .pis-btn { color: #fff; }
 
     /* ── FOOTER ── */
     footer {
@@ -1005,10 +1025,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">PhD Research Study — Recruitment Open</div>
+    <div class="hero-tag">The MEDAL Study — LJMU Research — Recruitment Open</div>
     <h1>Protecting Your Heart <span>for the Future</span></h1>
-    <p class="hero-sub">A clinical research study exploring how diet and exercise can reduce cardiovascular disease risk. We are looking for healthy adult volunteers aged 30–55 to take part.</p>
-    <a href="#apply" class="hero-cta">Express Interest →</a>
+    <p class="hero-sub">A 4-week research study at Liverpool John Moores University exploring how a Mediterranean-style diet and resistance exercise affect cholesterol and blood vessel health. We are looking for healthy adult volunteers aged 30–55.</p>
+    <a href="#apply" class="hero-cta">Find out more →</a>
     <div class="hero-badges">
       <div class="hero-badge"><span class="icon">🔬</span> PhD Research Programme</div>
       <div class="hero-badge"><span class="icon">🏫</span> LJMU — Liverpool</div>
@@ -1025,9 +1045,11 @@
         <div class="section-label">About the Study</div>
         <div class="red-rule"></div>
         <h2 class="section-title">What is this research about?</h2>
-        <p>This study aims to develop an effective, easy-to-follow programme to help adults <strong>futureproof themselves against cardiovascular disease</strong> by reducing cholesterol levels and improving their cardiovascular health.</p>
+        <p><strong>Merseyside Exercise and Diet intervention for Aggregation of LDL (MEDAL):</strong> a randomised controlled trial investigating the effects of diet and exercise on cardiovascular health.</p>
         <br>
-        <p>We will do this by using a dedicated smartphone application to support participants in adhering to a <strong>Mediterranean diet</strong> and/or a <strong>resistance exercise regimen</strong>. The study forms part of a PhD degree programme at Liverpool John Moores University.</p>
+        <p>This study is investigating whether a <strong>Mediterranean-style diet</strong> and/or <strong>resistance exercise</strong>, followed for four weeks, can improve cholesterol and other markers of cardiovascular health in healthy adults.</p>
+        <br>
+        <p>Participants in the diet and exercise groups use a dedicated smartphone app to support them. The study forms part of a PhD degree programme at Liverpool John Moores University and has been approved by the LJMU Research Ethics Committee (ref: 260629LJMUREC694).</p>
         <br>
         <div class="voluntary-banner">
           <div class="icon">⚠️</div>
@@ -1047,12 +1069,12 @@
           <div class="label">Age Range (years)</div>
         </div>
         <div class="about-stat">
-          <div class="number">6</div>
-          <div class="label">Assessment Types</div>
+          <div class="number">4</div>
+          <div class="label">Weeks</div>
         </div>
         <div class="about-stat">
-          <div class="number">📱</div>
-          <div class="label">Dedicated Study App</div>
+          <div class="number">2</div>
+          <div class="label">Visits to LJMU (~2 h each)</div>
         </div>
       </div>
     </div>
@@ -1066,11 +1088,11 @@
       <div class="section-label">Who can take part?</div>
       <div class="red-rule"></div>
       <h2 class="section-title">Eligibility Criteria</h2>
-      <p class="section-lead">Please read the criteria below carefully before expressing interest. You must meet <em><strong>all</strong></em> inclusion criteria and <em><strong>none</strong></em> of the exclusion criteria.</p>
+      <p class="section-lead">To take part, you must meet <em><strong>all</strong></em> of the inclusion criteria and <em><strong>none</strong></em> of the exclusion criteria. Eligibility is confirmed through a short online screening questionnaire and a health and exercise readiness questionnaire (PAR-Q).</p>
     </div>
     <div class="eligibility-grid fade-in">
       <div class="elig-card include">
-        <h3>✔ You should apply if…</h3>
+        <h3>✔ You may be able to take part if…</h3>
         <p class="sub">You meet all of the following conditions</p>
         <ul class="elig-list">
           <li>You are aged between <strong>30 and 55 years</strong></li>
@@ -1078,7 +1100,7 @@
         </ul>
       </div>
       <div class="elig-card exclude">
-        <h3>✖ You must NOT apply if…</h3>
+        <h3>✖ You cannot take part if…</h3>
         <p class="sub">You are ineligible if any of the following apply</p>
         <ul class="elig-list">
           <li>You currently use any <strong>cardiometabolic medication</strong>, particularly lipid-lowering drugs or supplements that may affect LDL cholesterol levels</li>
@@ -1101,7 +1123,7 @@
       <div class="section-label">Study Design</div>
       <div class="red-rule" style="background: var(--ljmu-accent);"></div>
       <h2 class="section-title">The Four Study Groups</h2>
-      <p class="section-lead">If you take part, you will be randomly allocated to one of these four groups.</p>
+      <p class="section-lead">If you take part, you will be randomly allocated (like flipping a coin) to one of these four groups for four weeks. You cannot choose your group.</p>
     </div>
     <div class="groups-grid fade-in">
       <div class="group-card">
@@ -1126,7 +1148,7 @@
         <div class="group-number">Group 4</div>
         <span class="group-icon">📋</span>
         <h3>Control Group</h3>
-        <p>You will receive general advice on <strong>healthy eating and exercise patterns</strong> without a structured programme.</p>
+        <p>You will <strong>carry on with your usual diet and activity</strong> for four weeks. You will not receive a programme, advice or the study app; this group lets us compare the other groups against normal day-to-day life.</p>
       </div>
     </div>
   </div>
@@ -1139,7 +1161,7 @@
       <div class="section-label">What's involved?</div>
       <div class="red-rule"></div>
       <h2 class="section-title">Assessments & Measurements</h2>
-      <p class="section-lead">All participants will undergo the following assessments at the beginning and end of the study period. These will be carried out at LJMU facilities by trained researchers.</p>
+      <p class="section-lead">All participants complete the following assessments at the start and end of the four weeks, at the Tom Reilly Building (LJMU Byrom Street Campus), carried out by trained researchers. Before each visit you will be asked to fast for 8 hours (water only) and avoid caffeine, alcohol and vigorous exercise for 24 hours.</p>
     </div>
     <div class="assessments-grid fade-in">
       <div class="assessment-card">
@@ -1166,25 +1188,45 @@
       <div class="assessment-card">
         <div class="assessment-icon">🧬</div>
         <div>
-          <h4>Advanced Blood Tests</h4>
-          <p>Comprehensive blood panel including cholesterol (LDL, HDL, total) and related markers.</p>
+          <h4>Blood Sample</h4>
+          <p>A small fasting blood sample (no more than 15 mL, about one tablespoon) to measure cholesterol, blood glucose and related markers.</p>
         </div>
       </div>
       <div class="assessment-card">
         <div class="assessment-icon">❤️</div>
         <div>
           <h4>Cardiovascular Tests</h4>
-          <p>Flow mediated dilation (FMD) and pulse wave velocity (PWV) to assess vascular health.</p>
+          <p>Flow-mediated dilation (FMD): an ultrasound of the artery in your upper arm while a cuff on your forearm is inflated for 5 minutes. Pulse wave velocity (PWV): sensors on your neck and upper leg record your pulse.</p>
         </div>
       </div>
       <div class="assessment-card">
         <div class="assessment-icon">📝</div>
         <div>
           <h4>Mediterranean Diet Score</h4>
-          <p>A validated questionnaire to assess adherence to the Mediterranean dietary pattern.</p>
+          <p>A short 14-item questionnaire about your diet. You will also complete a 3-day food diary and a physical activity questionnaire before each visit.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="steps-section" id="process">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">Taking part</div>
+      <div class="red-rule"></div>
+      <h2 class="section-title">What happens if I'm interested?</h2>
+      <p class="section-lead">You can stop at any step. Registering interest does not commit you to taking part.</p>
+    </div>
+    <ol class="steps-list fade-in">
+      <li><strong>Read the Participant Information Sheet</strong><p>It explains the study in full, including possible risks. <a class="pis-btn" href="MEDAL_Participant_Information_Sheet.pdf" target="_blank" rel="noopener">Read the Participant Information Sheet (PDF)</a></p></li>
+      <li><strong>Register interest and complete the screening questions</strong><p>A short online form (LJMU Jisc Online Surveys) asks you to confirm you have read the information sheet, answer a few eligibility questions and give your name and email address.</p></li>
+      <li><strong>We contact you</strong><p>The researcher will email you, answer any questions and let you know whether you are eligible. You will have at least 24 hours to decide.</p></li>
+      <li><strong>Give consent online</strong><p>If you decide to take part, you sign an online consent form, then complete a 3-day food diary and a physical activity questionnaire.</p></li>
+      <li><strong>Visit 1 at LJMU (about 2 hours)</strong><p>Health assessments, then random allocation to one of the four groups.</p></li>
+      <li><strong>Four weeks in your group, then Visit 2 (about 2 hours)</strong><p>The same assessments are repeated, plus a short exit questionnaire.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -1194,36 +1236,36 @@
     <div class="fade-in">
       <div class="section-label">Why take part?</div>
       <div class="red-rule" style="background: var(--ljmu-accent);"></div>
-      <h2 class="section-title">What's in it for you?</h2>
-      <p class="section-lead">Participation gives you access to a comprehensive suite of health assessments that would be difficult and costly to access elsewhere — all at no cost to you.</p>
+      <h2 class="section-title">Why take part?</h2>
+      <p class="section-lead">There is no payment for taking part. You will receive a summary of your own results. These measurements are for research and are not a medical diagnosis; if a result is outside the normal range (for example, high blood pressure), we will advise you to discuss it with your GP.</p>
     </div>
     <div class="benefits-grid fade-in">
       <div class="benefit-card">
         <div class="benefit-icon">🏃</div>
         <div>
-          <h4>State-of-the-Art Body Composition Test</h4>
-          <p>Gain a detailed picture of your body composition using equipment typically only available in clinical or elite sport settings.</p>
+          <h4>Body Composition</h4>
+          <p>A measure of your fat mass and muscle mass using a body composition analyser.</p>
         </div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">🩸</div>
         <div>
-          <h4>Cholesterol & Blood Sugar Check</h4>
-          <p>Receive a comprehensive blood analysis including cholesterol levels and blood glucose — key markers of your long-term health.</p>
+          <h4>Cholesterol & Blood Glucose</h4>
+          <p>Your cholesterol and blood glucose results from the start and end of the study.</p>
         </div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">❤️</div>
         <div>
-          <h4>Unique Cardiovascular Tests</h4>
-          <p>Access specialist vascular assessments — Flow Mediated Dilation (FMD) and Pulse Wave Velocity (PWV) — rarely available outside of research or private clinical settings.</p>
+          <h4>Vascular Tests</h4>
+          <p>Measures of blood vessel function (FMD) and arterial stiffness (PWV).</p>
         </div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon">🔬</div>
         <div>
-          <h4>Be Part of World-Leading Research</h4>
-          <p>Contribute to pioneering research at Liverpool John Moores University aimed at protecting future generations against cardiovascular disease.</p>
+          <h4>Contribute to Research</h4>
+          <p>Help improve understanding of how diet and exercise affect cardiovascular health.</p>
         </div>
       </div>
     </div>
@@ -1238,7 +1280,7 @@
         <div class="section-label">Study Technology</div>
         <div class="red-rule"></div>
         <h2 class="section-title">A Dedicated Study Application</h2>
-        <p class="section-lead">Participants will receive access to a bespoke, limited-access smartphone application developed specifically for this study.</p>
+        <p class="section-lead">Participants in the diet, exercise and combined groups receive access to a smartphone app developed for this study. The control group does not use the app.</p>
         <ul class="app-features-list">
           <li>
             <span class="fi">🔐</span>
@@ -1301,7 +1343,7 @@
       <div class="data-card">
         <div class="data-card-icon">📬</div>
         <h4>Contact Details</h4>
-        <p>Your name and email address (for correspondence) will be collected to communicate with you throughout the study period.</p>
+        <p>This website does not collect any personal information. If you register interest, your screening answers, name and email address are collected through LJMU’s Jisc Online Surveys and seen only by the research team. If you do not go on to take part, they are deleted when recruitment closes.</p>
       </div>
       <div class="data-card">
         <div class="data-card-icon">📄</div>
@@ -1328,7 +1370,7 @@
         <div class="section-label">Get Involved</div>
         <div class="red-rule" style="background: rgba(255,255,255,0.4);"></div>
         <h2 class="section-title">Interested in Taking Part?</h2>
-        <p class="section-lead">If you meet the eligibility criteria and would like to find out more, scan the QR code or get in touch directly with the research team.</p>
+        <p class="section-lead">If you think you are eligible, please read the Participant Information Sheet and then register your interest. <a class="pis-btn" href="MEDAL_Participant_Information_Sheet.pdf" target="_blank" rel="noopener">Participant Information Sheet (PDF)</a></p>
         <div class="apply-checks">
           <div class="apply-check">
             <div class="icon">✋</div>
@@ -1348,13 +1390,13 @@
             <div class="icon">📞</div>
             <div>
               <strong>Questions?</strong>
-              <p>Reach out to the research team at <strong>spsaamor@ljmu.ac.uk</strong> before applying.</p>
+              <p>You are welcome to email <strong>spsaamor@ljmu.ac.uk</strong> at any point, before or after registering.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="apply-form-card fade-in">
-        <h3>To express interest, scan this QR code or contact us</h3>
+        <h3>Register your interest</h3>
         <div style="display:flex; flex-direction:column; align-items:center; gap:24px; margin-top:24px;">
           <img src="QR_Code.png" alt="QR Code to express interest" style="width:220px; height:220px; border:6px solid #f0f0ea; border-radius:8px;" />
           <a href="https://app.onlinesurveys.jisc.ac.uk/s/ljmu/medal-trial" class="contact-btn">Register Interest</a>
@@ -1376,7 +1418,8 @@
     </div>
     <div class="footer-right">
       <div>Enquiries: spsaamor@ljmu.ac.uk</div>
-      <div style="margin-top: 4px;">© 2025 LJMU. All rights reserved.</div>
+      <div style="margin-top: 4px;">LJMU Research Ethics Committee ref: 260629LJMUREC694</div>
+      <div style="margin-top: 4px;">© 2026 LJMU. All rights reserved.</div>
       <div style="margin-top: 8px;"><a href="medex-privacy-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: underline;">MedEx Privacy Policy</a></div>
     </div>
   </div>
@@ -1394,12 +1437,6 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Form submission feedback
-  document.querySelector('.form-submit').addEventListener('click', function() {
-    this.textContent = '✓ Submitted — We\'ll be in touch!';
-    this.style.background = '#2E7D32';
-    this.disabled = true;
-  });
 </script>
 </body>
 </html>
