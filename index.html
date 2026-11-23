@@ -431,7 +431,7 @@
 
     .groups-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
 
@@ -1061,7 +1061,7 @@
       </div>
       <div class="about-stats-grid">
         <div class="about-stat">
-          <div class="number">4</div>
+          <div class="number">5</div>
           <div class="label">Study Groups</div>
         </div>
         <div class="about-stat">
@@ -1073,8 +1073,8 @@
           <div class="label">Weeks</div>
         </div>
         <div class="about-stat">
-          <div class="number">2</div>
-          <div class="label">Visits to LJMU (~2 h each)</div>
+          <div class="number">2–3</div>
+          <div class="label">Visits to LJMU</div>
         </div>
       </div>
     </div>
@@ -1097,7 +1097,7 @@
         <ul class="elig-list">
           <li>You are aged between <strong>18 and 55 years</strong></li>
           <li>You own and regularly use a <strong>smartphone</strong></li>
-          <li>You are able to <strong>travel to LJMU in Liverpool</strong> for two visits</li>
+          <li>You are able to <strong>travel to LJMU in Liverpool</strong> for two or three visits</li>
         </ul>
       </div>
       <div class="elig-card exclude">
@@ -1123,15 +1123,15 @@
     <div class="fade-in">
       <div class="section-label">Study Design</div>
       <div class="red-rule" style="background: var(--ljmu-accent);"></div>
-      <h2 class="section-title">The Four Study Groups</h2>
-      <p class="section-lead">If you take part, you will be randomly allocated (like flipping a coin) to one of these four groups for four weeks. You cannot choose your group.</p>
+      <h2 class="section-title">The Five Study Groups</h2>
+      <p class="section-lead">If you take part, you will be randomly allocated (like flipping a coin) to one of these five groups for four weeks. You cannot choose your group.</p>
     </div>
     <div class="groups-grid fade-in">
       <div class="group-card">
         <div class="group-number">Group 1</div>
         <span class="group-icon">🏋️</span>
         <h3>Resistance Exercise</h3>
-        <p>You will follow a structured <strong>3-day-per-week resistance exercise programme</strong> designed by the research team.</p>
+        <p>You will follow a structured <strong>3-day-per-week resistance exercise programme</strong> designed by the research team, tracked using the study app.</p>
       </div>
       <div class="group-card">
         <div class="group-number">Group 2</div>
@@ -1143,13 +1143,19 @@
         <div class="group-number">Group 3</div>
         <span class="group-icon">🏋️🥗</span>
         <h3>Combination</h3>
-        <p>You will follow <strong>both</strong> the Mediterranean-style diet <strong>and</strong> the 3-day-per-week resistance exercise programme.</p>
+        <p>You will follow <strong>both</strong> the Mediterranean-style diet <strong>and</strong> the 3-day-per-week resistance exercise programme, tracked using the study app.</p>
       </div>
       <div class="group-card">
         <div class="group-number">Group 4</div>
         <span class="group-icon">📋</span>
         <h3>Control Group</h3>
         <p>You will <strong>carry on with your usual diet and activity</strong> for four weeks. You will not receive a programme, advice or the study app during the study; this group lets us compare the other groups against normal day-to-day life. At the end, you will be offered a booklet with the diet and exercise guidance.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-number">Group 5</div>
+        <span class="group-icon">📖</span>
+        <h3>Booklet</h3>
+        <p>You will follow <strong>both</strong> the Mediterranean-style diet <strong>and</strong> the 3-day-per-week resistance exercise programme, using a <strong>printed booklet</strong> instead of the app.</p>
       </div>
     </div>
   </div>
@@ -1204,7 +1210,7 @@
         <div class="assessment-icon">📝</div>
         <div>
           <h4>Diet and Exercise Questionnaires</h4>
-          <p>A short 14-item Mediterranean diet questionnaire and a muscle-strengthening exercise questionnaire, completed during each visit. Before each visit you will also keep a 3-day food diary.</p>
+          <p>A short 14-item Mediterranean diet questionnaire and a muscle-strengthening exercise questionnaire, completed at the baseline and 4-week visits, with a 3-day food diary kept before each of these. If you use the app, you will also complete two short questionnaires about it at the 4-week visit.</p>
         </div>
       </div>
     </div>
@@ -1225,8 +1231,9 @@
       <li><strong>Register interest and complete the screening questions</strong><p>A <a href="https://app.onlinesurveys.jisc.ac.uk/s/ljmu/medal-trial" target="_blank">short online form</a> (LJMU Jisc Online Surveys) asks you to confirm you have read the information sheet, answer a few eligibility questions and give your name and email address.</p></li>
       <li><strong>We contact you</strong><p>The researcher will email you, answer any questions and let you know whether you are eligible. You will have at least 24 hours to decide.</p></li>
       <li><strong>Give consent online</strong><p>If you decide to take part, you complete a short online consent form, then keep a 3-day food diary before your first visit.</p></li>
-      <li><strong>Visit 1 at LJMU (about 2 hours)</strong><p>Health assessments, then random allocation to one of the four groups.</p></li>
-      <li><strong>Four weeks in your group, then Visit 2 (about 2 hours)</strong><p>The same assessments are repeated, plus a short exit questionnaire.</p></li>
+      <li><strong>Visit 1 at LJMU (about 2 hours)</strong><p>Health assessments, then random allocation to one of the five groups.</p></li>
+      <li><strong>Four weeks in your group, then Visit 2 (about 2 hours)</strong><p>The same assessments are repeated, plus a short exit questionnaire. If you used the app, you will also answer two short questionnaires about it.</p></li>
+      <li><strong>App groups only: Visit 3 at week 8 (about 15 minutes)</strong><p>After visit 2 you stop using the app. Four weeks later, you come back for a quick body composition check.</p></li>
     </ol>
   </div>
 </section>
@@ -1281,7 +1288,7 @@
         <div class="section-label">Study Technology</div>
         <div class="red-rule"></div>
         <h2 class="section-title">A Dedicated Study Application</h2>
-        <p class="section-lead">Participants in the diet, exercise and combined groups receive access to a smartphone app developed for this study. The control group does not use the app.</p>
+        <p class="section-lead">Participants in the diet, exercise and combined groups receive access to a smartphone app developed for this study. The control and booklet groups do not use the app.</p>
         <ul class="app-features-list">
           <li>
             <span class="fi">🔐</span>
